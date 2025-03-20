@@ -1,0 +1,4 @@
+Requirement already satisfied: uvicorn in /home/thangpd@kaopiz.local/.local/lib/python3.8/site-packages (0.33.0)
+Requirement already satisfied: click>=7.0 in /usr/lib/python3/dist-packages (from uvicorn) (7.0)
+Requirement already satisfied: h11>=0.8 in /home/thangpd@kaopiz.local/.local/lib/python3.8/site-packages (from uvicorn) (0.14.0)
+Requirement already satisfied: typing-extensions>=4.0; python_version < "3.11" in /home/thangpd@kaopiz.local/.local/lib/python3.8/site-packages (from uvicorn) (4.12.2)
