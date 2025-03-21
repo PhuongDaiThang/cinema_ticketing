@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-DB_URL = os.getenv("DATABASE_URL", "mysql+mysqlconnector://root:thang2004phutho@db:3306/cinema")
+DB_URL = os.getenv("DATABASE_URL", "mysql+mysqlconnector://root:1234@db:3306/cinema")
 
 engine = create_engine(DB_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
