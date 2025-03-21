@@ -13,10 +13,9 @@ async def read_item(item_id: int):
     if cached_item:
         return {"item_id": item_id, "cached": True, "data": cached_item.decode('utf-8')}
     
-    # Simulate data fetching process
     item_data = f"Item data for {item_id}"
     
-    # Store the item in Redis for future requests
-    redis_client.set(f"item_{item_id}", item_data)
+    # Store the item in Redis with an expiration time of 1 hour (3600 seconds)
+    redis_client.setex(f"item_{item_id}", 3600, item_data)
     
     return {"item_id": item_id, "cached": False, "data": item_data}
