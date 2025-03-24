@@ -5,6 +5,10 @@ class UserCreate(BaseModel):
     username: str
     email: str
     password: str
+    
+class LoginRequest(BaseModel):
+    username: str
+    password: str
 
 class MovieCreate(BaseModel):
     title: str
