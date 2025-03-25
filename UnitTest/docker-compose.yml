@@ -5,8 +5,8 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_DATABASE: yourdb
-      MYSQL_ROOT_PASSWORD: yourpassword
+      MYSQL_DATABASE: test_unit
+      MYSQL_ROOT_PASSWORD: 1234
     ports:
       - "3309:3306"
     volumes:
