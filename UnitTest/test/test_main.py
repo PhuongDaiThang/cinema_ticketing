@@ -61,3 +61,9 @@ def test_get_me():
     response = client.get("/me")
     assert response.status_code == 200
     assert response.json()["username"] == "meuser"
+def test_register_persists_to_db():
+    client.post("/register", json={"username": "dbuser", "password": "123"})
+    db = next(override_get_db())
+    user = db.query(User).filter(User.username == "dbuser").first()
+    assert user is not None
+    assert user.username == "dbuser"
