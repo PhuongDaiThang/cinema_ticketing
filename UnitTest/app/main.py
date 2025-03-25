@@ -1,8 +1,8 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-from auth import get_password_hash, authenticate_user, create_access_token, get_current_user
-from database import SessionLocal, engine, Base
-import crud, schemas
+from app.auth import get_password_hash, authenticate_user, create_access_token, get_current_user
+from app.database import SessionLocal, engine, Base
+from app import crud, schemas
 
 Base.metadata.create_all(bind=engine)
 

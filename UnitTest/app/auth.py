@@ -3,8 +3,8 @@ from jose import jwt
 from passlib.context import CryptContext
 from datetime import timedelta, datetime
 from sqlalchemy.orm import Session
-from crud import get_user_by_username
-from database import SessionLocal
+from app.crud import get_user_by_username
+from app.database import SessionLocal
 
 SECRET_KEY = "secret"
 ALGORITHM = "HS256"

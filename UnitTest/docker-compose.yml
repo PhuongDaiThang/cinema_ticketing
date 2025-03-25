@@ -1,0 +1,25 @@
+version: "3.3"
+
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: yourdb
+      MYSQL_ROOT_PASSWORD: yourpassword
+    ports:
+      - "3309:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+
+  web:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+volumes:
+  dbdata:

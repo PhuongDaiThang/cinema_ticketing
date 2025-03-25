@@ -5,10 +5,10 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session
 import pytest
-from models import User
-from main import app, get_db
-from database import Base, SessionLocal, engine
-
+from app.models import User
+from app.main import app, get_db
+from app.database import Base, SessionLocal, engine
+from app.auth import get_current_user
 
 # Tạo DB riêng cho test
 Base.metadata.drop_all(bind=engine)
@@ -56,7 +56,6 @@ def test_get_me():
         db = next(override_get_db())
         return db.query(User).filter(User.username == "meuser").first()
 
-    from auth import get_current_user
     app.dependency_overrides[get_current_user] = fake_get_current_user
 
     response = client.get("/me")
