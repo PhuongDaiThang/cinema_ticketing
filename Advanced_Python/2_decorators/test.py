@@ -1,12 +1,12 @@
 def my_decorator(func):
     def wrapper():
-        print("Before the function runs")
+        print("Trước khi gọi hàm")
         func()
-        print("After the function runs")
+        print("Sau khi gọi hàm")
     return wrapper
 
 @my_decorator
-def say_hello():
-    print("Hello!")
+def say_hi():
+    print("Hi!")
 
-say_hello()
+say_hi()

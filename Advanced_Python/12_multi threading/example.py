@@ -53,33 +53,42 @@
 # 	print ("error")
 
 
+# import threading
+
+# def print_numbers():
+#     for i in range(10):
+#         print(i)
+
+# def print_letters():
+#     for letter in 'abcdefghij':
+#         print(letter)
+
+# def print_lettersz():
+#     for letter in 'zxcvbnmasdfghjklqwertyuiop':
+#         print(letter)
+
+# # Tạo hai luồng
+# thread1 = threading.Thread(target=print_numbers)
+# thread2 = threading.Thread(target=print_letters)
+# thread3 = threading.Thread(target=print_lettersz)
+
+# # Bắt đầu hai luồng
+# thread1.start()
+# thread2.start()
+# thread3.start()
+
+# # Đợi cho cả hai luồng hoàn thành
+# thread1.join()
+# thread2.join()
+# thread3.join()
+
+# print("Done!")
+
 import threading
 
 def print_numbers():
-    for i in range(10):
+    for i in range(5):
         print(i)
 
-def print_letters():
-    for letter in 'abcdefghij':
-        print(letter)
-
-def print_lettersz():
-    for letter in 'zxcvbnmasdfghjklqwertyuiop':
-        print(letter)
-
-# Tạo hai luồng
-thread1 = threading.Thread(target=print_numbers)
-thread2 = threading.Thread(target=print_letters)
-thread3 = threading.Thread(target=print_lettersz)
-
-# Bắt đầu hai luồng
-thread1.start()
-thread2.start()
-thread3.start()
-
-# Đợi cho cả hai luồng hoàn thành
-thread1.join()
-thread2.join()
-thread3.join()
-
-print("Done!")
+t1 = threading.Thread(target=print_numbers)
+t1.start()
